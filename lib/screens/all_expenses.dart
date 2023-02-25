@@ -15,7 +15,7 @@ class _AllExpensesState extends State<AllExpenses> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('All Expenses'),
-        backgroundColor: Colors.red[400],
+        backgroundColor: Color.fromARGB(255, 56, 115, 179),
       ),
       body: const AllExpensesFetcher(),
     );

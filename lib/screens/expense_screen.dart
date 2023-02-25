@@ -11,7 +11,7 @@ class ExpenseScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Expense Screen'),
-        backgroundColor: Colors.red[400],
+        backgroundColor: Color.fromARGB(255, 56, 115, 179),
       ),
       body: ExpenseFetcher(category),
     );
