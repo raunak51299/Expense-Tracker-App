@@ -6,11 +6,28 @@ import './screens/category_screen.dart';
 import './screens/expense_screen.dart';
 import './screens/all_expenses.dart';
 
+
+// Light Theme
+final ThemeData lightTheme = ThemeData(
+  brightness: Brightness.light,
+  primarySwatch: Colors.blue,
+  // add other properties as desired
+);
+
+// Dark Theme
+final ThemeData darkTheme = ThemeData(
+  brightness: Brightness.dark,
+  primarySwatch: Colors.blue,
+  // add other properties as desired
+);
+
 void main() {
-  runApp(ChangeNotifierProvider(
-    create: (_) => DatabaseProvider(),
-    child: const MyApp(),
-  ));
+  runApp(
+   ChangeNotifierProvider(
+      create: (_) => DatabaseProvider(),
+      child: const MyApp(),
+      ),
+    );
 }
 
 class MyApp extends StatelessWidget {
@@ -19,6 +36,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: darkTheme, 
       debugShowCheckedModeBanner: false,
       initialRoute: CategoryScreen.name,
       routes: {
