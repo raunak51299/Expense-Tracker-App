@@ -37,9 +37,13 @@ class _ExpenseFetcherState extends State<ExpenseFetcher> {
           } else {
             return Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              
               child: Column(
                 children: [
                   SizedBox(
+                    height: 30,
+                  ),
+                  Container(
                     height: 250.0,
                     child: ExpenseChart(widget.category),
                   ),
