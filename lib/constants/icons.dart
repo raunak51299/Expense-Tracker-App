@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 // these are the initial category names and the icons for them
 Map<String, IconData> icons = {
-  'Auto And Transport': Icons.directions_car,
-  'Food And Drinks': Icons.fastfood,
-  'Sports': Icons.sports_soccer,
+  'Transport': Icons.directions_car,
+  'Food': Icons.fastfood,
   'Entertainment': Icons.movie,
-  'Education': Icons.school,
+  'Shopping': Icons.shopping_cart,
+  'Investment': Icons.attach_money,
+  'Health': Icons.local_hospital,
+  'Bills': Icons.payment,
   'Other': Icons.miscellaneous_services,
 };
