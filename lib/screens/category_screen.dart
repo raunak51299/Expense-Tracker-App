@@ -9,7 +9,7 @@ class CategoryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: const Text('Categories')),
+        title: Center(child: const Text('Money Manager')),
         backgroundColor: Color.fromARGB(255, 56, 115, 179),
       ),
       body: const CategoryFetcher(),
@@ -22,7 +22,9 @@ class CategoryScreen extends StatelessWidget {
           );
         },
         backgroundColor: Color.fromARGB(255, 56, 115, 179),
-        child: const Icon(Icons.add),
+        child: const Icon(
+          Icons.add,
+        ),
       ),
     );
   }

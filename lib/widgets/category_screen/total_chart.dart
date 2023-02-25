@@ -54,7 +54,7 @@ class _TotalChartState extends State<TotalChart> {
                         const SizedBox(width: 5.0),
                         Text(total == 0
                             ? '0%'
-                            : '${((e.totalAmount / total) * 100).toStringAsFixed(2)}%'),
+                            : '${((e.totalAmount / total) * 100).toStringAsFixed(1)}%'),
                       ],
                     ),
                   ),
@@ -66,7 +66,7 @@ class _TotalChartState extends State<TotalChart> {
             flex: 40,
             child: PieChart(
               PieChartData(
-                centerSpaceRadius: 20.0,
+                centerSpaceRadius: 25.0,
                 sections: total != 0
                     ? list
                         .map(
