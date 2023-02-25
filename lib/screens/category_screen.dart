@@ -9,7 +9,7 @@ class CategoryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Categories'),
+        title: Center(child: const Text('Categories')),
         backgroundColor: Color.fromARGB(255, 56, 115, 179),
       ),
       body: const CategoryFetcher(),
