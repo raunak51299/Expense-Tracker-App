@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
 import '../models/database_provider.dart';
@@ -47,7 +48,7 @@ class _ExpenseFormState extends State<ExpenseForm> {
             TextField(
               controller: _title,
               decoration: const InputDecoration(
-                labelText: 'Title of expense',
+                labelText: 'Expense description',
               ),
             ),
             const SizedBox(height: 20.0),
@@ -55,8 +56,11 @@ class _ExpenseFormState extends State<ExpenseForm> {
             TextField(
               controller: _amount,
               keyboardType: TextInputType.number,
+              inputFormatters: [
+                FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
+              ],
               decoration: const InputDecoration(
-                labelText: 'Amount of expense',
+                labelText: 'Amount',
               ),
             ),
             const SizedBox(height: 20.0),
@@ -65,12 +69,13 @@ class _ExpenseFormState extends State<ExpenseForm> {
               children: [
                 Expanded(
                   child: Text(_date != null
-                      ? DateFormat('MMMM dd, yyyy').format(_date!)
+                      ? DateFormat('dd MMMM, yyyy').format(_date!)
                       : 'Select Date'),
                 ),
                 IconButton(
                   onPressed: () => _pickDate(),
                   icon: const Icon(Icons.calendar_month),
+                  
                 ),
               ],
             ),
@@ -101,8 +106,15 @@ class _ExpenseFormState extends State<ExpenseForm> {
             ),
             const SizedBox(height: 20.0),
             ElevatedButton.icon(
+              //make it rounded corener
               style: ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll( Color.fromARGB(255, 56, 115, 179)),
+                backgroundColor:
+                    MaterialStatePropertyAll(Color.fromARGB(255, 56, 115, 179)),
+                shape: MaterialStateProperty.all(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
               ),
               onPressed: () {
                 if (_title.text != '' && _amount.text != '') {
